@@ -1,0 +1,122 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# HDF5 data files (large binary files)
+*.h5
+*.hdf5
+
+# Audio files (original dataset - too large for git)
+*.wav
+*.mp3
+*.m4a
+*.flac
+
+# Large data files
+*.csv
+*.tsv
+*.txt
+training_data/
+yaseen/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Model files and outputs
+*.pth
+*.pt
+*.onnx
+*.pkl
+*.joblib
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large preprocessed data
+data/preprocessed/*.h5
+data/raw/
+data/interim/
+data/external/
+
+# Keep structure but ignore large content
+!data/preprocessed/.gitkeep
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/external/.gitkeep
+
+# License and dataset info (keep small metadata files)
+!*.md
+!*.txt
+!LICENSE*
+!README*
+!requirements*.txt
+!setup.*
+!.gitignore
+
+# Keep important config files
+!*.json
+!*.yaml
+!*.yml
+!*.cfg
+!*.ini
+
+# Keep source code
+!*.py
+!*.ipynb

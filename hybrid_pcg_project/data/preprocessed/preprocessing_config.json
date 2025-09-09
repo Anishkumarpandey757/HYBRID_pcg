@@ -1,0 +1,13 @@
+{
+  "circor_sr": 4000,
+  "yaseen_sr": 4000,
+  "circor_clip_length": 12.0,
+  "yaseen_clip_length": 3.0,
+  "mel_bins": 128,
+  "target_size": 224,
+  "use_dwt": true,
+  "dwt_wavelet": "db4",
+  "dwt_levels": 5,
+  "circor_target_length": 48000,
+  "yaseen_target_length": 12000
+}

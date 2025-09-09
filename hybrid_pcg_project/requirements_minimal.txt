@@ -1,0 +1,15 @@
+# Minimal requirements for preprocessing pipeline
+numpy
+pandas
+scipy
+scikit-learn
+librosa
+soundfile
+wfdb
+PyWavelets
+matplotlib
+seaborn
+h5py
+tqdm
+pyyaml
+opencv-python

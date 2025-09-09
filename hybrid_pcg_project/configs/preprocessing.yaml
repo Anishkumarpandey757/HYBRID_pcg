@@ -1,0 +1,78 @@
+# Preprocessing Configuration
+dataset:
+  name: "CirCor DigiScope"
+  version: "1.0.3"
+  source_path: "../training_data"
+  metadata_file: "../training_data.csv"
+  output_path: "data/preprocessed"
+  features_path: "data/features"
+
+audio:
+  sampling_rate: 4000
+  target_duration: 10.0  # seconds
+  normalize: true
+  filter:
+    low_pass: 1000
+    high_pass: 25
+    order: 5
+
+segmentation:
+  use_annotations: true
+  segment_types: ["S1", "S2", "systolic", "diastolic", "murmur"]
+  min_segment_duration: 0.1  # seconds
+  overlap_threshold: 0.5
+
+features:
+  extract_mfcc: true
+  extract_spectral: true
+  extract_temporal: true
+  extract_mel_spectrogram: true
+  
+  mfcc:
+    n_mfcc: 13
+    n_fft: 512
+    hop_length: 256
+    
+  mel_spectrogram:
+    n_mels: 128
+    n_fft: 512
+    hop_length: 256
+    
+  spectral:
+    - "spectral_centroid"
+    - "spectral_rolloff"
+    - "spectral_contrast"
+    - "zero_crossing_rate"
+    
+  temporal:
+    - "rms"
+    - "tempo"
+
+augmentation:
+  enabled: true
+  methods:
+    time_stretch:
+      enabled: true
+      rate_range: [0.8, 1.2]
+    pitch_shift:
+      enabled: true
+      steps_range: [-2, 2]
+    noise_addition:
+      enabled: true
+      noise_factor: 0.01
+    time_shift:
+      enabled: true
+      shift_range: [-0.1, 0.1]
+
+processing:
+  batch_size: 32
+  num_workers: 4
+  save_format: "hdf5"
+  compression: "gzip"
+
+validation:
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  stratify: true
+  random_seed: 42
